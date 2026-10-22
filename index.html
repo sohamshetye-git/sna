@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untitled13 - Jupyter Notebook</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 48' fill='none'%3E%3Cpath d='M 7 21 A 17 14 0 0 1 37 21' stroke='%23F37626' stroke-width='4.2' stroke-linecap='round'/%3E%3Cpath d='M 7 27 A 17 14 0 0 0 37 27' stroke='%23F37626' stroke-width='4.2' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='7' r='3.2' fill='%23616161'/%3E%3Ccircle cx='39' cy='24' r='3.2' fill='%23616161'/%3E%3Ccircle cx='22' cy='41' r='3.2' fill='%23616161'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <!-- Header / Navigation Area -->
+  <header class="jp-header" id="jpHeader">
+    <!-- Row 1: Logo, Title, Checkpoint, and Python logo -->
+    <div class="jp-header-row top-row">
+      <div class="jp-header-left">
+        <!-- Jupyter Brand -->
+        <div class="jp-brand">
+          <svg class="jp-logo-svg" viewBox="0 0 48 48" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 9 20 C 13 12 35 12 39 20" stroke="#F37626" stroke-width="4.2" stroke-linecap="round"/>
+            <path d="M 9 28 C 13 36 35 36 39 28" stroke="#F37626" stroke-width="4.2" stroke-linecap="round"/>
+            <circle cx="24" cy="7" r="3.2" fill="#616161"/>
+            <circle cx="41" cy="24" r="3.2" fill="#616161"/>
+            <circle cx="24" cy="41" r="3.2" fill="#616161"/>
+          </svg>
+          <span class="jp-brand-name">jupyter</span>
+        </div>
+
+        <!-- Notebook Title -->
+        <span class="jp-notebook-title" id="notebookTitle" contenteditable="true" spellcheck="false">Untitled13</span>
+
+        <!-- Checkpoint Info -->
+        <span class="jp-checkpoint-text" id="checkpointText">Last Checkpoint: <span class="checkpoint-time">43 seconds ago</span></span>
+      </div>
+
+      <div class="jp-header-right-top">
+        <!-- Python Logo -->
+        <div class="jp-python-logo" title="Python 3 (ipykernel)">
+          <svg viewBox="0 0 110 110" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3874a4" d="M54.5 5.5c-27 0-25.3 11.7-25.3 11.7l.1 12.1h25.8v3.7H19.2S5.5 31.4 5.5 58.4c0 27 12 26 12 26h7.2v-10.1s-.4-12 11.8-12h20.3s11.3.2 11.3-11.1V17.3S70 5.5 54.5 5.5zm-14 8.2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/>
+            <path fill="#ffd43b" d="M55.5 104.5c27 0 25.3-11.7 25.3-11.7l-.1-12.1H54.9V77h35.9s13.7 1.6 13.7-25.4c0-27-12-26-12-26h-7.2v10.1s.4 12-11.8 12H53.2s-11.3-.2-11.3 11.1v23.9s-1.9 11.8 13.6 11.8zm14-8.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Menu Bar (File, Edit, etc.) + Trusted Badge & Gemini Status -->
+    <div class="jp-header-row menu-row">
+      <nav class="jp-menubar">
+        <div class="jp-menu-item" data-menu="file">File</div>
+        <div class="jp-menu-item" data-menu="edit">Edit</div>
+        <div class="jp-menu-item" data-menu="view">View</div>
+        <div class="jp-menu-item" data-menu="run">Run</div>
+        <div class="jp-menu-item" data-menu="kernel">Kernel</div>
+        <div class="jp-menu-item" data-menu="settings">Settings</div>
+        <div class="jp-menu-item is-highlighted" data-menu="help">Help</div>
+      </nav>
+
+      <div class="jp-header-right-menu">
+        <div class="jp-trusted-badge" id="trustedBadge" onclick="window.toggleTrustedDropdown && window.toggleTrustedDropdown(event)" title="Click to open Practical Codes dropdown (codes/)">
+          <span>Trusted</span>
+          <svg class="trusted-chevron" viewBox="0 0 24 24" width="10" height="10" fill="currentColor">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Action Toolbar (Buttons + Kernel Status) -->
+    <div class="jp-header-row toolbar-row">
+      <!-- Left side icons -->
+      <div class="jp-toolbar-left">
+        <!-- Save button -->
+        <button class="jp-btn-icon" id="btnSave" title="Save and Checkpoint (Ctrl+S)">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+          </svg>
+        </button>
+
+        <!-- Insert Cell Below (+) -->
+        <button class="jp-btn-icon" id="btnAddCell" title="Insert cell below">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+        </button>
+
+        <!-- Cut cell (Scissors) -->
+        <button class="jp-btn-icon" id="btnCut" title="Cut selected cells">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/>
+          </svg>
+        </button>
+
+        <!-- Copy cell -->
+        <button class="jp-btn-icon" id="btnCopy" title="Copy selected cells">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+
+        <!-- Paste cell -->
+        <button class="jp-btn-icon" id="btnPaste" title="Paste cells below">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M19 2h-4.18C14.4 0.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V4h2v3h10V4h2v16z"/>
+          </svg>
+        </button>
+
+        <!-- Run (Play) -->
+        <button class="jp-btn-icon" id="btnRun" title="Run the selected cells and advance (Shift+Enter)">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+
+        <!-- Interrupt (Solid black square) -->
+        <button class="jp-btn-icon" id="btnInterrupt" title="Interrupt the kernel">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <rect x="4" y="4" width="16" height="16"/>
+          </svg>
+        </button>
+
+        <!-- Restart kernel (Curved circular arrow) -->
+        <button class="jp-btn-icon" id="btnRestart" title="Restart the kernel">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+          </svg>
+        </button>
+
+        <!-- Restart & Run all (Double play triangle >>) -->
+        <button class="jp-btn-icon" id="btnRestartRunAll" title="Restart the kernel, then re-run the whole notebook">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z"/>
+          </svg>
+        </button>
+
+        <!-- Cell type dropdown ("Code") -->
+        <div class="jp-cell-type-selector">
+          <select id="cellTypeSelect" aria-label="Cell type">
+            <option value="code" selected>Code</option>
+            <option value="markdown">Markdown</option>
+            <option value="raw">Raw</option>
+          </select>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right side indicators -->
+      <div class="jp-toolbar-right">
+        <!-- JupyterLab external link -->
+        <a href="#" class="jp-lab-link" id="jupyterLabLink" title="Open in JupyterLab">
+          <span>JupyterLab</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+
+        <!-- Debugger / Status icon -->
+        <div class="jp-debug-icon" title="Debugger status">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M19 8h-1.81A5.986 5.986 0 0 0 13 4.18V2h-2v2.18A5.986 5.986 0 0 0 6.81 8H5c-.55 0-1 .45-1 1s.45 1 1 1h1.09c-.05.33-.09.66-.09 1v1H4c-.55 0-1 .45-1 1s.45 1 1 1h2v1c0 .34.04.67.09 1H5c-.55 0-1 .45-1 1s.45 1 1 1h1.81A5.986 5.986 0 0 0 11 21.82V24h2v-2.18c2.83-.48 5-2.94 5-5.82v-1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2v-1c0-.34-.04-.67-.09-1H19c.55 0 1-.45 1-1s-.45-1-1-1zm-6 11c-2.76 0-5-2.24-5-5v-2c0-2.76 2.24-5 5-5s5 2.24 5 5v2c0 2.76-2.24 5-5 5z"/>
+          </svg>
+        </div>
+
+        <!-- Kernel Name -->
+        <span class="jp-kernel-name">Python 3 (ipykernel)</span>
+
+        <!-- Kernel Idle / Busy Circle -->
+        <div class="jp-kernel-status" id="kernelStatusIndicator" title="Kernel status: Idle">
+          <span class="kernel-circle"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dropdown Menus Container (Hidden by default, interactive) -->
+  <div class="jp-dropdown-menu" id="menuDropdown"></div>
+  <div class="jp-trusted-dropdown" id="trustedDropdown"></div>
+
+  <!-- Notebook Body / Canvas -->
+  <main class="jp-notebook-canvas">
+    <div class="jp-notebook-document" id="notebookDocument">
+
+      <!-- Cell 1 -->
+      <div class="jp-cell" data-cell-id="1">
+        <div class="jp-cell-input-row">
+          <div class="jp-cell-indicator"></div>
+          <div class="jp-cell-prompt">
+            <span class="prompt-text">[ ]:</span>
+          </div>
+          <div class="jp-cell-editor-container">
+            <div class="jp-cell-input" contenteditable="true" spellcheck="false" data-placeholder=""></div>
+            <div class="jp-cell-toolbar"></div>
+          </div>
+        </div>
+        <div class="jp-cell-output-row"></div>
+        <div class="jp-cell-ai-container"></div>
+      </div>
+
+      <!-- Cell 2 -->
+      <div class="jp-cell" data-cell-id="2">
+        <div class="jp-cell-input-row">
+          <div class="jp-cell-indicator"></div>
+          <div class="jp-cell-prompt">
+            <span class="prompt-text">[ ]:</span>
+          </div>
+          <div class="jp-cell-editor-container">
+            <div class="jp-cell-input" contenteditable="true" spellcheck="false" data-placeholder=""></div>
+            <div class="jp-cell-toolbar"></div>
+          </div>
+        </div>
+        <div class="jp-cell-output-row"></div>
+        <div class="jp-cell-ai-container"></div>
+      </div>
+
+      <!-- Cell 3 -->
+      <div class="jp-cell" data-cell-id="3">
+        <div class="jp-cell-input-row">
+          <div class="jp-cell-indicator"></div>
+          <div class="jp-cell-prompt">
+            <span class="prompt-text">[ ]:</span>
+          </div>
+          <div class="jp-cell-editor-container">
+            <div class="jp-cell-input" contenteditable="true" spellcheck="false" data-placeholder=""></div>
+            <div class="jp-cell-toolbar"></div>
+          </div>
+        </div>
+        <div class="jp-cell-output-row"></div>
+        <div class="jp-cell-ai-container"></div>
+      </div>
+
+      <!-- Cell 4 -->
+      <div class="jp-cell" data-cell-id="4">
+        <div class="jp-cell-input-row">
+          <div class="jp-cell-indicator"></div>
+          <div class="jp-cell-prompt">
+            <span class="prompt-text">[ ]:</span>
+          </div>
+          <div class="jp-cell-editor-container">
+            <div class="jp-cell-input" contenteditable="true" spellcheck="false" data-placeholder=""></div>
+            <div class="jp-cell-toolbar"></div>
+          </div>
+        </div>
+        <div class="jp-cell-output-row"></div>
+        <div class="jp-cell-ai-container"></div>
+      </div>
+
+      <!-- Cell 5 (Active cell, matching screenshot with blue indicator bar & action toolbar) -->
+      <div class="jp-cell is-active" data-cell-id="5">
+        <div class="jp-cell-input-row">
+          <div class="jp-cell-indicator">
+            <div class="active-blue-bar"></div>
+          </div>
+          <div class="jp-cell-prompt">
+            <span class="prompt-text">[ ]:</span>
+          </div>
+          <div class="jp-cell-editor-container">
+            <div class="jp-cell-input" contenteditable="true" spellcheck="false" data-placeholder=""></div>
+            
+            <!-- Cell Action Toolbar on right side -->
+            <div class="jp-cell-toolbar" id="activeCellToolbar">
+              <!-- Green AI sparkle icon (Primary AI button) -->
+              <button class="cell-tool-btn ai-sparkle" title="✨ Gemini AI (Generate code, Solve errors, Debug)" data-action="ai-assist">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/>
+                </svg>
+              </button>
+
+              <!-- Duplicate cell icon -->
+              <button class="cell-tool-btn" title="Duplicate cell" data-action="duplicate">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="8" y="8" width="12" height="12" rx="1.5"></rect>
+                  <path d="M16 8V5a1.5 1.5 0 0 0-1.5-1.5h-9A1.5 1.5 0 0 0 4 5v9A1.5 1.5 0 0 0 5.5 15.5H8"></path>
+                </svg>
+              </button>
+
+              <!-- Move cell up icon -->
+              <button class="cell-tool-btn" title="Move cell up" data-action="move-up">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </button>
+
+              <!-- Move cell down icon -->
+              <button class="cell-tool-btn" title="Move cell down" data-action="move-down">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </button>
+
+              <!-- Insert cell above icon -->
+              <button class="cell-tool-btn" title="Insert cell above" data-action="insert-above">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                  <path d="M19 15v4H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4h-2zm-6-2.67l2.59-2.58L17 11.17l-5 5-5-5 1.41-1.42L11 12.33V3h2v9.33z"/>
+                </svg>
+              </button>
+
+              <!-- Insert cell below icon -->
+              <button class="cell-tool-btn" title="Insert cell below" data-action="insert-below">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                  <path d="M5 9V5h14v4h2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4h2zm6 2.67l-2.59 2.58L7 12.83l5-5 5 5-1.41 1.42L13 11.67V21h-2v-9.33z"/>
+                </svg>
+              </button>
+
+              <!-- Delete cell icon -->
+              <button class="cell-tool-btn" title="Delete cell" data-action="delete">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                  <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="jp-cell-output-row"></div>
+        <div class="jp-cell-ai-container"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="practicals_data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
