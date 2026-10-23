@@ -335,7 +335,7 @@ const menusData = {
     { label: "Theme: JupyterLab Light" },
     { label: "Auto Close Brackets" },
     { divider: true },
-    { label: "📂 Practical Codes (codes/ folder)...", action: "open-practicals" }
+    { label: "📂 Deep Learning Practicals (dl_code/ folder)...", action: "open-practicals" }
   ],
   help: [
     { label: "JupyterLab Reference" },
@@ -1101,7 +1101,7 @@ Instructions:
     if (!listContainer) return;
 
     if (!items || items.length === 0) {
-      listContainer.innerHTML = `<div style="padding: 14px; text-align: center; color: #b31412; font-size: 12px;">No practical files found in codes/ folder.</div>`;
+      listContainer.innerHTML = `<div style="padding: 14px; text-align: center; color: #b31412; font-size: 12px;">No practical files found in dl_code/ folder.</div>`;
       return;
     }
 
@@ -1147,7 +1147,7 @@ Instructions:
     trustedDropdown.innerHTML = `
       <div class="trusted-dropdown-header">
         <div class="trusted-dropdown-title">
-          <span>📂 Practical Notebooks (codes/)</span>
+          <span>📂 Deep Learning Notebooks (dl_code/)</span>
         </div>
         <div class="trusted-dropdown-subtitle">Click any practical to load all its code cells into the notebook</div>
       </div>
@@ -1158,7 +1158,7 @@ Instructions:
         <button class="btn-reset-template" id="btnResetNotebook" title="Reset back to 5 blank cells">
           <span>🔄 Reset to Blank Template</span>
         </button>
-        <span style="font-size: 10.5px; color: #80868b;">7 Practicals available</span>
+        <span style="font-size: 10.5px; color: #80868b;">6 Practicals available</span>
       </div>
     `;
 

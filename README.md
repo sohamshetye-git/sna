@@ -1,11 +1,11 @@
-# Jupyter Notebook Clone with Gemini AI & Social Network Analysis Practicals
+# Jupyter Notebook Clone with Gemini AI & Deep Learning Practicals
 
-A Jupyter Notebook 7 web interface featuring interactive cells, AI code generation & debugging powered by Google Gemini 2.5 Flash, and pre-bundled Social Network Analysis (SNA) practicals.
+A Jupyter Notebook 7 web interface featuring interactive cells, AI code generation & debugging powered by Google Gemini 2.5 Flash, and pre-bundled Deep Learning (DL) practical notebooks (`dl_code/`).
 
 ## ✨ Features
 - **Authentic Jupyter UI**: Complete with menu bar, toolbar, cell shortcuts (`Shift+Enter`, `Alt+Enter`), Markdown & Code cell toggling.
 - **Gemini 2.5 Flash AI Assistant**: Generate code, debug errors, explain tracebacks, and optimize algorithms directly inside notebook cells.
-- **Practicals Dropdown**: Click the **"Trusted"** button in the top-right toolbar to load practical notebooks directly into the editor.
+- **Deep Learning Dropdown**: Click the **"Trusted"** button in the top-right toolbar to load practical notebooks directly into the editor from `dl_code/`.
 - **Vercel Serverless Ready**: Secure serverless backend at `/api/gemini` for handling AI prompts without exposing API keys on the frontend.
 
 ## 🚀 Deploy to Vercel
